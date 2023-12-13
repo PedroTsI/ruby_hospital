@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @article %>
+
+<div class="d-flex flex-row">
+  <%= link_to "Edit this article", edit_article_path(@article), class:"btn btn-outline-primary" %> 
+  <%= link_to "Back to articles", articles_path, class:"btn btn-outline-secondary" %>
+
+  <%= button_to "Destroy this article", @article, method: :delete, class:"btn btn-outline-danger" %>
+</div>

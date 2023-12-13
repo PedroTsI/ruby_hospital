@@ -1,0 +1,14 @@
+<div class="flex position-absolute">
+  <h1>Novo Medico</h1>
+
+  <%= render "form", medic: @medic %>
+
+  <br>
+    <div>
+      <%= invisible_captcha %>
+    </div>
+
+  <div>
+    <%= link_to "Listagem de medicos", medics_path, class:"btn btn-outline-info" %>
+  </div>
+</div>

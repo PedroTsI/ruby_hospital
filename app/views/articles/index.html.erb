@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+<div class="d-flex justify-content-end">
+  <%= link_to "Home", root_path, class:"btn btn-outline-primary" %>
+  <%= button_to "Sair",destroy_user_session_path, method: :delete, class:"btn btn-outline-danger"%>
+</div>
+
+<h1>Prontuario</h1>
+
+<div id="articles">
+  <%if @articles.any? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Autor</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% @articles.each do |article| %>
+          <tr>
+            <th scope="row"><%=article.id%></th>
+            <td><%= link_to article.title, article, class:"btn btn-outline-dark"%></td>
+            <td><%=article.user.name%></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <%end%>
+</div>
+
+<%= link_to "Novo Prontuario", new_article_path, class:"btn btn-outline-secondary" %>

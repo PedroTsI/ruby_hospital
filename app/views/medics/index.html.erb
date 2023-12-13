@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+<div class="d-flex justify-content-end">
+  <%= link_to "Home", root_path, class:"btn btn-outline-primary" %>
+  <%= button_to "Sair",destroy_user_session_path, method: :delete, class:"btn btn-outline-danger"%>
+</div>
+
+<h1>Medicos</h1>
+
+<div id="medics" class="d-flex flex-wrap p-2">
+  <% @medics.each do |medic| %>
+    <div class="p-2 flex-column flex-fill">
+    <%= render medic %>
+    <p class="">
+      <%= link_to "Ver Medico", medic, class:"btn btn-outline-dark"%>
+    </p>
+    </div>
+  <% end %>
+</div>
+
+
+<%= paginate(@medics)%>
+<%= link_to "Novo Medico", new_medic_path, class:"btn btn-outline-secondary" %>

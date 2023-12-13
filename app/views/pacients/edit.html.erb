@@ -1,0 +1,10 @@
+<h1>Editar Paciente</h1>
+
+<%= render "form", pacient: @pacient %>
+
+<br>
+
+<div class="d-flex">
+  <%= link_to "Ver Paciente", @pacient, class:"btn btn-outline-info" %> 
+  <%= link_to "Listagem de Pacientes", pacients_path, class:"btn btn-outline-primary" %>
+</div>

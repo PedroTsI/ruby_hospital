@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @medic %>
+
+<div class="d-flex flex-row">
+  <%= link_to "Editar Medico", edit_medic_path(@medic), class:"btn btn-outline-primary" %> 
+  <%= link_to "Listagem de Medicos", medics_path, class:"btn btn-outline-info" %>
+
+  <%= button_to "Deletar Medico", @medic, method: :delete, class:"btn btn-outline-danger" %>
+</div>

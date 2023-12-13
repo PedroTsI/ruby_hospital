@@ -1,0 +1,12 @@
+<h1>Novo Paciente</h1>
+
+<%= render "form", pacient: @pacient %>
+
+<br>
+  <div>
+      <%= invisible_captcha %>
+  </div>
+
+<div>
+  <%= link_to "Listagem de Pacientes", pacients_path, class:"btn btn-outline-info" %>
+</div>

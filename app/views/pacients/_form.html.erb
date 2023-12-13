@@ -1,0 +1,89 @@
+<%= form_with(model: pacient) do |form| %>
+  <% if pacient.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pacient.errors.count, "error") %> prohibited this pacient from being saved:</h2>
+
+      <ul>
+        <% pacient.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%if pacient.errors[:nome].any?%>
+      <ul>
+        <%pacient.errors[:nome].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <%end%>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, style: "display: block" %>
+    <%if pacient.errors[:cpf].any?%>
+      <ul>
+        <%pacient.errors[:cpf].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <%end%>
+    <%= form.text_field :cpf %>
+  </div>
+
+  <div>
+    <%= form.label :sexo, style: "display: block" %>
+    <%if pacient.errors[:sexo].any?%>
+      <ul>
+        <%pacient.errors[:sexo].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <%end%>
+    <%= form.text_field :sexo %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%if pacient.errors[:email].any?%>
+      <ul>
+        <%pacient.errors[:email].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <%end%>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :telefone, style: "display: block" %>
+    <%if pacient.errors[:telefone].any?%>
+      <ul>
+        <%pacient.errors[:telefone].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <%end%>
+    <%= form.text_field :telefone %>
+  </div>
+
+  <div>
+    <%= form.label :data_de_nascimento, style: "display: block" %>
+    <%if pacient.errors[:data_de_nascimento].any?%>
+      <ul>
+        <%pacient.errors[:data_de_nascimento].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    <%end%>
+    <%= form.date_field :data_de_nascimento %>
+  </div>
+
+  <div class="mt-2">
+    <%= form.submit class:"btn btn-outline-success" %>
+  </div>
+<% end %>
